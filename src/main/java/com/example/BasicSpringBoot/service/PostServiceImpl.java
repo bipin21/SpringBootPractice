@@ -23,4 +23,19 @@ public class PostServiceImpl implements PostService{
     public Optional<Post> getById(int id) {
         return postRepository.getById(id);
     }
+
+    @Override
+    public Post save(Post post) {
+        return postRepository.save(post);
+    }
+
+    @Override
+    public Post update(Post post) {
+        return postRepository.update(post);
+    }
+
+    @Override
+    public int delete(int id) {
+        return postRepository.delete(id);
+    }
 }

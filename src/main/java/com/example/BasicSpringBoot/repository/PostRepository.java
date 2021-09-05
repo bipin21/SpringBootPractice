@@ -10,5 +10,11 @@ public interface PostRepository {
     public List<Post> getAll();
 
     public Optional<Post> getById(int id);
+    
+    public Post save(Post post);
+
+    public Post update(Post post);
+
+    public int delete(int id);
 
 }

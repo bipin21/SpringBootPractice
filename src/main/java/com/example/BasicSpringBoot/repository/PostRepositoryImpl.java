@@ -25,4 +25,43 @@ public class PostRepositoryImpl implements PostRepository {
     public Optional<Post> getById(int id) {
         return posts.stream().filter((p -> p.getId() == id)).findFirst();
     }
+
+    @Override
+    public Post save(Post post) {
+        posts.add(post);
+        return post;
+    }
+
+    @Override
+    public Post update(Post post) {
+        int count = posts.size();
+        int id = post.getId();
+//        Optional<Post> postFind = getById(id);
+//        if(postFind != null){
+//
+//        }
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                Post oldPost = posts.get(i);
+                if (oldPost.getId() == id) {
+                    posts.set(i, post);
+                    return post;
+                }
+
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public int delete(int id) {
+        Optional<Post> postFind = getById(id);
+        if (postFind.isEmpty()) {
+            return 0;
+        }
+        posts.remove(postFind);
+        return 1;
+
+    }
 }
