@@ -13,7 +13,7 @@ public interface PostService {
 
     public Post save(Post post);
 
-    public Post update(Post post);
+//    public Post update(Post post);
 
-    public int delete(int id);
+    public int deleteById(int id);
 }

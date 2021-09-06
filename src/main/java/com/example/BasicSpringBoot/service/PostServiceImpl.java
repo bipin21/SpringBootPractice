@@ -5,23 +5,25 @@ import com.example.BasicSpringBoot.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PostServiceImpl implements PostService{
+@Transactional
+public class PostServiceImpl implements PostService {
 
     @Autowired
     PostRepository postRepository;
 
     @Override
     public List<Post> getAll() {
-        return postRepository.getAll();
+        return postRepository.findAll();
     }
 
     @Override
     public Optional<Post> getById(int id) {
-        return postRepository.getById(id);
+        return postRepository.findById(id);
     }
 
     @Override
@@ -30,12 +32,8 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post update(Post post) {
-        return postRepository.update(post);
-    }
-
-    @Override
-    public int delete(int id) {
-        return postRepository.delete(id);
+    public int deleteById(int id) {
+        postRepository.deleteById(id);
+        return 1;
     }
 }
