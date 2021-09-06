@@ -36,10 +36,6 @@ public class PostRepositoryImpl implements PostRepository {
     public Post update(Post post) {
         int count = posts.size();
         int id = post.getId();
-//        Optional<Post> postFind = getById(id);
-//        if(postFind != null){
-//
-//        }
         if (count > 0) {
             for (int i = 0; i < count; i++) {
                 Post oldPost = posts.get(i);
@@ -60,8 +56,11 @@ public class PostRepositoryImpl implements PostRepository {
         if (postFind.isEmpty()) {
             return 0;
         }
-        posts.remove(postFind);
-        return 1;
+//        boolean remove = posts.remove(postFind);
+        boolean remove = posts.removeIf( p -> p.getId() == id);
+        return remove ? 1 : 0;
 
     }
+
+
 }
