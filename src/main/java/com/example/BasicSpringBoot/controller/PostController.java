@@ -49,8 +49,9 @@ public class PostController {
         return null;
     }
 
+    // get by Id with hateaos
     @GetMapping(value = "{id}", headers = "X-API-VERSION=1")
-    protected EntityModel<Post> getByIdH(@PathVariable("id") int id) {
+    protected EntityModel<Post> getById(@PathVariable("id") int id) {
         Post post = postService.getById(id).orElse(null);
         EntityModel<Post> resource = EntityModel.of(post);
 
