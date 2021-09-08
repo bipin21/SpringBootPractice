@@ -27,11 +27,6 @@ public class PostController {
         return postService.getAll();
     }
 
-//    @GetMapping("/{id}")
-//    public Optional<Post> getById(@PathVariable("id") int id) {
-//        return postService.getById(id);
-//    }
-
     @PostMapping
     public Post save(@RequestBody Post post) {
         return postService.save(post);
@@ -44,8 +39,14 @@ public class PostController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id) {
+    public ResponseEntity<?> deleteById(@PathVariable("id") int id) {
         postService.deleteById(id);
+        return null;
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<?> delete(@RequestBody Post post) {
+        postService.delete(post);
         return null;
     }
 
@@ -63,7 +64,7 @@ public class PostController {
         // delete link
         resource.add(WebMvcLinkBuilder.linkTo(
                 WebMvcLinkBuilder.methodOn(this.getClass())
-                .delete(post.getId())).withRel("delete"));
+                .deleteById(post.getId())).withRel("delete"));
 
         return resource;
     }
