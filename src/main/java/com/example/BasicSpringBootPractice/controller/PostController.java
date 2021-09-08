@@ -1,8 +1,8 @@
-package com.example.BasicSpringBoot.controller;
+package com.example.BasicSpringBootPractice.controller;
 
-import com.example.BasicSpringBoot.domain.Post;
-import com.example.BasicSpringBoot.domain.PostV2;
-import com.example.BasicSpringBoot.service.PostService;
+import com.example.BasicSpringBootPractice.domain.Post;
+import com.example.BasicSpringBootPractice.domain.PostV2;
+import com.example.BasicSpringBootPractice.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;

@@ -1,8 +1,8 @@
-package com.example.BasicSpringBoot.service;
+package com.example.BasicSpringBootPractice.service;
 
-import com.example.BasicSpringBoot.domain.Post;
-import com.example.BasicSpringBoot.domain.User;
-import com.example.BasicSpringBoot.repository.UserRepository;
+import com.example.BasicSpringBootPractice.domain.Post;
+import com.example.BasicSpringBootPractice.domain.User;
+import com.example.BasicSpringBootPractice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +38,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> UserWithMorePosts() {
         return userRepository.UserWithMorePosts();
+    }
+
+    @Override
+    public List<User> usersStartsWithB() {
+        return userRepository.usersStartsWithB();
+    }
+
+    @Override
+    public List<User> usersWithName(String name) {
+        return userRepository.usersWithName(name);
     }
 }

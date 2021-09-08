@@ -6,7 +6,7 @@ INSERT into POST (id, title, content, author) VALUES (5, 'fifth','Spring is awes
 INSERT into POST (id, title, content, author) VALUES (6, 'sixth','Spring is awesome','Bob');
 
 
-INSERT into USERS (id, name) VALUES (1, 'Ram');
+INSERT into USERS (id, name) VALUES (1, 'Rame');
 INSERT into USERS (id, name) VALUES (2, 'John');
 INSERT into USERS (id, name) VALUES (3, 'Bob');
 INSERT into USERS (id, name) VALUES (4, 'Bob1');

@@ -1,9 +1,7 @@
-package com.example.BasicSpringBoot.service;
+package com.example.BasicSpringBootPractice.service;
 
-import com.example.BasicSpringBoot.domain.Post;
-import com.example.BasicSpringBoot.domain.User;
-import com.example.BasicSpringBoot.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.BasicSpringBootPractice.domain.Post;
+import com.example.BasicSpringBootPractice.domain.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,4 +18,8 @@ public interface UserService {
     public List<Post> findPosts(long id);
 
     public List<User> UserWithMorePosts();
+
+    public List<User> usersStartsWithB();
+
+    public List<User> usersWithName(String name);
 }

@@ -1,7 +1,7 @@
-package com.example.BasicSpringBoot.service;
+package com.example.BasicSpringBootPractice.service;
 
-import com.example.BasicSpringBoot.domain.Post;
-import com.example.BasicSpringBoot.repository.PostRepository;
+import com.example.BasicSpringBootPractice.domain.Post;
+import com.example.BasicSpringBootPractice.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

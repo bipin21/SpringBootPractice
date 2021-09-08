@@ -1,6 +1,6 @@
-package com.example.BasicSpringBoot.service;
+package com.example.BasicSpringBootPractice.service;
 
-import com.example.BasicSpringBoot.domain.Post;
+import com.example.BasicSpringBootPractice.domain.Post;
 
 import java.util.List;
 import java.util.Optional;

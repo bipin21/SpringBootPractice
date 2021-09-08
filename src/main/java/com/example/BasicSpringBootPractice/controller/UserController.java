@@ -1,10 +1,9 @@
-package com.example.BasicSpringBoot.controller;
+package com.example.BasicSpringBootPractice.controller;
 
-import com.example.BasicSpringBoot.domain.Post;
-import com.example.BasicSpringBoot.domain.User;
-import com.example.BasicSpringBoot.service.UserService;
+import com.example.BasicSpringBootPractice.domain.Post;
+import com.example.BasicSpringBootPractice.domain.User;
+import com.example.BasicSpringBootPractice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,6 +41,16 @@ public class UserController {
     @GetMapping("usersWithMoreThanOnePosts")
     public List<User> UserWithMorePosts(){
         return userService.UserWithMorePosts();
+    }
+
+    @GetMapping("usersStartsWithB")
+    public List<User> usersStartsWithB(){
+        return userService.usersStartsWithB();
+    }
+
+    @GetMapping("usersWithName")
+    public List<User> usersWithName(@RequestParam("name") String name){
+        return userService.usersWithName(name);
     }
 
 
